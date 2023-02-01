@@ -7,12 +7,12 @@ module.exports = {
     run: async(client, message, args) => {
 
         let embed = new Discord.EmbedBuilder()
-        .setColor("Random")
+        .setColor("#BF40BF")
         .setAuthor({ name: client.user.username, iconURL: client.user.displayAvatarURL() })
         .setDescription(`🏓 Olá ${message.author}, seu ping está em: \`carregando...\`.`);
 
         let embed2 = new Discord.EmbedBuilder()
-        .setColor("Random")
+        .setColor("#BF40BF")
         .setAuthor({ name: client.user.username, iconURL: client.user.displayAvatarURL() })
         .setDescription(`🏓 Olá ${message.author}, seu ping está em: \`${client.ws.ping}ms\`.`);
 
