@@ -4,13 +4,13 @@ module.exports = async (client) => {
 
 const SlashsArray = []
 
-  fs.readdir(`./Comandos`, (error, folder) => {
+  fs.readdir(`./commands`, (error, folder) => {
   folder.forEach(subfolder => {
-fs.readdir(`./Comandos/${subfolder}/`, (error, files) => { 
+fs.readdir(`./commands/${subfolder}/`, (error, files) => { 
   files.forEach(files => {
       
   if(!files?.endsWith('.js')) return;
-  files = require(`../Comandos/${subfolder}/${files}`);
+  files = require(`../commands/${subfolder}/${files}`);
   if(!files?.name) return;
   client.slashCommands.set(files?.name, files);
    
