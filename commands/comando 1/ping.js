@@ -1,7 +1,7 @@
 const Discord = require("discord.js")
 
 module.exports = {
-  name: "ping",
+  name: "ping", 
   description: "Veja o ping do bot.",
   type: Discord.ApplicationCommandType.ChatInput,
 

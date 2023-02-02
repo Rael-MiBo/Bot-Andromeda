@@ -3,8 +3,8 @@ const { QuickDB } = require("quick.db")
 const db = new QuickDB()
 
 module.exports = {
-  name: "verificação", // Coloque o nome do comando
-  description: "Ative o sistema de verificação.", // Coloque a descrição do comando
+  name: "verificação",
+  description: "Ative o sistema de verificação.",
   type: Discord.ApplicationCommandType.ChatInput,
   options: [
     {

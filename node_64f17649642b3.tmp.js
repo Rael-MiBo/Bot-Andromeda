@@ -1,14 +1,19 @@
-const Discord = require("discord.js")
+ const Discord = require("discord.js")
+  
+  const config = require("./config.json")
+  
+  const client = new Discord.Client({ 
+    intents: [ 
+      Discord.GatewayIntentBits.Guilds
+    ]
+  });
+  
+  client.login(config.token)
 
-const config = require("./config.json")
+  module.exports = client
 
-const client = new Discord.Client({ 
-  intents: [ 
-Discord.GatewayIntentBits.Guilds
-       ]
-    });
-
-module.exports = client
+const { QuickDB } = require("quick.db")
+const db = new QuickDB()
 
 client.on('interactionCreate', (interaction) => {
 
@@ -27,11 +32,4 @@ client.on('interactionCreate', (interaction) => {
 
 client.on('ready', () => {
   console.log(`🔥 Estou online em ${client.user.username}!`)
-})
-
-
-client.slashCommands = new Discord.Collection()
-
-require('./handler')(client)
-
-client.login(config.token)
+}) 
