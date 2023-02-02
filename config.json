@@ -1,4 +1,9 @@
 {
     "prefix": "!",
-    "token":"MTA3MDQwMTU3NjU5MTcwODI0Mg.G80WEr.O94R5om82uhSeoeR8U-8VfLKyTEFPMvOnCFk54"
+    "token":"MTA3MDQwMTU3NjU5MTcwODI0Mg.G80WEr.O94R5om82uhSeoeR8U-8VfLKyTEFPMvOnCFk54",
+    "loggerChannelID": "1070835157038280806",
+    "webhook": {
+        "id": "1070835531493146747",
+        "token": "iXb10dYmG7oYtmQ1rnws9Fxy3CtOfgfiEiUREIHd4BTyI4M9_5XJI84cxLYnHtQird9h"
+    }
 }

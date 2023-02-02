@@ -10,6 +10,7 @@ Discord.GatewayIntentBits.Guilds
 
 module.exports = client
 
+
 client.on('interactionCreate', (interaction) => {
 
   if(interaction.type === Discord.InteractionType.ApplicationCommand){
