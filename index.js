@@ -33,26 +33,3 @@ client.on('interactionCreate', (interaction) => {
 client.on('ready', () => {
   console.log(`🔥 Estou online em ${client.user.username}!`)
 })
-
-
-client.slashCommands = new Discord.Collection()
-
-require('./handler')(client)
-
-client.on("interactionCreate", async (interaction) => {
-  if (interaction.isButton()) {
-    if (interaction.customId === "verificar") {
-      let role_id = await db.get(`cargo_verificação_${interaction.guild.id}`);
-      let role = interaction.guild.roles.cache.get(role_id);
-      if (!role) return;
-      interaction.member.roles.add(role.id)
-      interaction.reply({ content: `Ola **${interaction.user.username}**, você foi verificado!`, ephemeral: true })
-    }
-  }
-})
-
-const prefix = "/";
-
-client.on("ready", () => {
-  console.log(`Logged in as ${client.user.tag}!`);
-});
