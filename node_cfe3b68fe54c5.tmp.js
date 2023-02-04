@@ -34,7 +34,7 @@ client.on('interactionCreate', (interaction) => {
 })
 
 client.on("guildBanAdd", (member) => {
-  const channel = client.channels.cache.get("1070835157038280806");
+  const channel = client.channels.cache.get("1071061045898121228");
   const embed = new Discord.EmbedBuilder()
   .setColor("#eb0927")
   .setThumbnail(`${client.user.displayAvatarURL({ size: 2048 })}`)
@@ -46,7 +46,7 @@ client.on("guildBanAdd", (member) => {
 })
 
 client.on("guildBanRemove", (member) => {
-  const channel = client.channels.cache.get("1070835157038280806");
+  const channel = client.channels.cache.get("1071061045898121228");
   const embed = new Discord.EmbedBuilder()
   .setColor("#eb0927")
   .setThumbnail(`${client.user.displayAvatarURL({ size: 2048 })}`) 
@@ -61,7 +61,7 @@ client.on('messageUpdate', (message, newMessage, oldMessage) => {
   if(message.author.bot) return;
 
 
-  const canalLogs = message.guild.channels.cache.get("1070835157038280806") 
+  const canalLogs = message.guild.channels.cache.get("1071061045898121228") 
 
 
   let usuárioMSGe = message.author.id;
@@ -86,7 +86,7 @@ client.on('messageUpdate', (message, newMessage, oldMessage) => {
 }) 
 
 client.on("messageDelete", (message, oldMessage, newMessage) => {
-  const channel = client.channels.cache.get("1070835157038280806");
+  const channel = client.channels.cache.get("1071061045898121228");
   const embed = new Discord.EmbedBuilder()
       .setTitle(`<:7889discordchat:1046476120297582622> ‣ LOG | Mensagem Deletada.`)
       .setColor('#eb0927')
@@ -95,35 +95,6 @@ client.on("messageDelete", (message, oldMessage, newMessage) => {
       .setTimestamp(new Date())
       .setDescription(`**<:1288discordrole:1028430849915498606> ‣ Autor da mensagem**  \n> **Usuário:** ${message.author} \n> **ID:** ${message.author.id} \n\n**<:7889discordchat:1046476120297582622> ‣ Canal:** \n> ${message.channel} \n\n**Mensagem deletada:** \n \`\`\`${message.content}\`\`\``)
       channel.send({ embeds: [embed] });
-})
-
-const { ActivityType } = require('discord.js')
-
-setInterval(() => {
-
-let list = ['estão me codando', 'em manutenção', 'sendo testada']
-
-let status = list[Math.floor(Math.random() * list.length)]
-
-client.user.setPresence({
-activities: [{
-name: status,
-type: ActivityType.Watching
-}],
-status: 'online e roteando'
-})      
-}, 3000) 
-
-client.on("messageCreate", message =>{
-
-  let mention = new Discord.EmbedBuilder()
-
-  .setDescription(`Olá`)
-  .setColor(`#eb0927`)
-
-  if (message.author.bot) return
-  if (message.content == `<@${client.user.id}>`) message.channel.send({ embeds: [mention] })
-
 })
 
 client.on('ready', () => {
