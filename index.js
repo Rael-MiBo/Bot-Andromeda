@@ -1,5 +1,7 @@
 const Discord = require("discord.js")
 const {GatewayIntentBits, Partials} = require("discord.js")
+require('events').EventEmitter.defaultMaxListeners = 500;
+
 
 const config = require("./config.json")
 
