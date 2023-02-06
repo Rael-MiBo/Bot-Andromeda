@@ -70,7 +70,7 @@ module.exports = {
     const embedUser = new EmbedBuilder()
     .setAuthor({ name: `${client.user.username}`, iconURL: `${client.user.displayAvatarURL()}`})
     .setThumbnail(usuarioTest.displayAvatarURL({ dynamyc: true}))
-    .setColor('#00000')
+    .setColor('#eb0927')
     .addFields(
       {
         name: `<:arroba:1071551209246314556> | Nome:`,
@@ -108,7 +108,7 @@ module.exports = {
     .setStyle(ButtonStyle.Secondary)
     .setCustomId('verPerms')
 
-    if(!acharUser) botaoUser.setLabel('<:erro1:936752679319896115> | Não encontrado no servidor'), botaoUser.setDisabled(true)
+    if(!acharUser) botaoUser.setLabel('<:erro1:1071912527337898074> | Não encontrado no servidor'), botaoUser.setDisabled(true)
     if(acharUser) embedUser.addFields({
       name: `<:calendario2:1071551213394481202> | Entrou em:`,
       value: `<t:${~~(acharUser.joinedTimestamp / 1000)}:f> (<t:${~~(acharUser.joinedTimestamp / 1000)}:R>)`,
@@ -126,14 +126,14 @@ module.exports = {
 
         const permsArray = acharUser.permissions.toArray().map(p => permsObj[p])
 
-        const embedPerms = new EmbedBuilder().setColor('#00000').addFields(
+        const embedPerms = new EmbedBuilder().setColor('#eb0927').addFields(
           {
-            name: '<:1_:880546834437799966> | Maior Cargo:',
+            name: '<:top1:1071912705801326612> | Maior Cargo:',
             value: `${acharUser.roles.cache.sort((a, b) => b.position - a.position).first()}`,
             inline: false
           },
           {
-            name: `<:emg:1048351043056050186> | Permissões de ${usuarioTest.username}`,
+            name: `<:settings:1071551214631784508> | Permissões de ${usuarioTest.username}`,
             value: `${permsArray.join(', ')}`
           }
         )
