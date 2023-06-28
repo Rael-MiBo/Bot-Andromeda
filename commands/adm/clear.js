@@ -3,12 +3,12 @@ const Discord = require("discord.js")
 module.exports = {
     name: "apagar",
     description: "Limpa o Canal de texto",
-    type: Discord.ApplicationCommandType.ChatInput,
+    type: 1,
     options: [
         {
             name: 'quantidade',
             description: 'Número de mensagens para serem apagadas.',
-            type: Discord.ApplicationCommandOptionType.Number,
+            type: 10,
             required: true,
         },
         {
@@ -32,7 +32,7 @@ module.exports = {
     run: async (client, interaction) => {
 
         let numero = interaction.options.getNumber('quantidade')
-        let apagar = interaction.options.getString('mostrar')
+        let apagar = interaction.options.getString('mostrar')  //  inutilidade
 
         if (!interaction.member.permissions.has(Discord.PermissionFlagsBits.ManageMessages)) {
             interaction.reply({ content: `Você não possui permissão para utilizar este comando.`, ephemeral: true })
