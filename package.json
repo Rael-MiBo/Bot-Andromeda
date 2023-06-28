@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node .",
+    "dev": "nodemon --inspect ."
   },
   "repository": {
     "type": "git",
@@ -24,6 +26,7 @@
     "fs": "^0.0.1-security",
     "glob": "^8.1.0",
     "mongoose": "^6.9.0",
+    "nodemon": "^2.0.22",
     "quick.db": "^9.0.8",
     "util": "^0.12.5"
   }

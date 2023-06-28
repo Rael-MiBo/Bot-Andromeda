@@ -101,20 +101,20 @@ client.on("messageDelete", (message, oldMessage, newMessage) => {
 
 const { ActivityType } = require('discord.js')
 
-// setInterval(() => {
+setInterval(() => {
 
-// let list = ['estão me codando', 'em manutenção', 'sendo testada']
+let list = ['estão me codando', 'em manutenção', 'sendo testada']
 
-// let status = list[Math.floor(Math.random() * list.length)]
+let status = list[Math.floor(Math.random() * list.length)]
 
-// client.user.setPresence({
-// activities: [{
-// name: status,
-// type: ActivityType.Watching
-// }],
-// status: 'online e roteando'
-// })      
-// }, 3000) 
+client.user.setPresence({
+activities: [{
+name: status,
+type: ActivityType.Watching
+}],
+status: 'online e roteando'
+})      
+}, 3000) 
 
 client.on("messageCreate", message =>{
 
@@ -138,3 +138,4 @@ client.slashCommands = new Discord.Collection()
 require('./handler')(client)
 
 client.login(config.token)
+
