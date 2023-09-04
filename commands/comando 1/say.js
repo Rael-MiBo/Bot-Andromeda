@@ -1,5 +1,6 @@
 const Discord = require("discord.js")
 
+
 module.exports = {
     name: "say", 
     description: "oque você deseja que eu fale?", 
@@ -47,11 +48,13 @@ module.exports = {
 
         if (!interaction.member.permissions.has(Discord.PermissionFlagsBits.Administrator)) {
             interaction.reply({ content: `Você não tem permissão para usar este comando!`, ephemeral: true })
-        } else {
+        } 
+        else 
+        {
 
             let msg = interaction.options.getString("mensagem")
             let titulo = interaction.options.getString("titulo")
-            let cor = interaction.options.getString("cor")
+            let cor =  interaction.options.getString("cor")
             let canal = interaction.options.getChannel("canal")
             let log = interaction.options.getChannel("log")
             let user = interaction.options.getUser("usuario")

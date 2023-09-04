@@ -1,5 +1,6 @@
 const Discord = require("discord.js")
 
+
 module.exports = {
   name: "ping", 
   description: "Veja o ping do bot.",
