@@ -32,7 +32,7 @@ module.exports = {
     run: async (client, interaction) => {
 
         let numero = interaction.options.getNumber('quantidade')
-        let apagar = interaction.options.getString('mostrar')  //  inutilidade
+        let apagar = interaction.options.getString('mostrar')
 
         if (!interaction.member.permissions.has(Discord.PermissionFlagsBits.ManageMessages)) {
             interaction.reply({ content: `Você não possui permissão para utilizar este comando.`, ephemeral: true })
